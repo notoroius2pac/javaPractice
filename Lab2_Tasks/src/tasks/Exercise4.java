@@ -1,47 +1,38 @@
 package tasks;
 
-import java.util.Scanner;
+import java.util.Arrays;
 
 public class Exercise4 {
-
-	public static void main(String args[]) {
-		int num[];
-		int numSize;
-		Scanner sc = new Scanner(System.in);
-		Exercise4 ex = new Exercise4();
-
-		System.out.println("Enter the size of array: ");
-		numSize = sc.nextInt();
-		num = new int[numSize];
-
-		for (int i = 0; i < numSize; ++i) {
-			num[i] = sc.nextInt();
+	public static void modifyArray(int arr[]) {
+		int temp = 0;
+		int len = arr.length;
+		for (int i = 0; i < len; i++) {
+			for (int j = i + 1; j < len; j++) {
+				if (arr[i] == arr[j]) {
+					arr[j] = arr[len - 1];
+					len--;
+					j--;
+				}
+			}
 		}
-		num = ex.modified(num);
-		for (int j = 0; j<numSize; ++j) {
-			System.out.println(j + "\t"+num[j]);
+		int[] array1 = Arrays.copyOf(arr, len);
+		for (int i = 0; i < array1.length; i++) {
+			for (int j = i + 1; j < array1.length; j++) {
+				if (array1[i] < array1[j]) {
+					temp = array1[i];
+					array1[i] = array1[j];
+					array1[j] = temp;
+				}
+			}
 		}
-		
-		sc.close();
+		System.out.println("Array with unique values and in descending order: ");
+
+		for (int i = 0; i < array1.length; i++) {
+			System.out.print(array1[i] + "\t");
+		}
 	}
 
-	int[] modified(int array[]) {
-		int temp[] , len;
-		len = array.length;
-		temp = new int[len];
-		
-			for(int i = 0 ;i<len;++i) {
-				temp[i] = array[i];
-					if(array[i]!= -1) {
-						for(int j = 1 ; j<len;++j) {
-							if(array[j] == temp[i]) {
-								array[j]= -1;
-							}
-						}
-					}else {
-						continue;
-					}
-			}
-		return temp;
+	public static void main(String[] args) {
+		modifyArray(new int[] { 10, 20, 15, 20, 30, 30, 40, 50, 50 });
 	}
 }
