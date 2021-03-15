@@ -34,9 +34,9 @@ public class EmployeeMain {
 			str = empMap.get(k).getId()  +" "+empMap.get(k).getName() +" "+empMap.get(k).getDesignation() +" "+empMap.get(k).getSalary() +" "+empMap.get(k).getInsuranceScheme();
 			System.out.println(k  +"\t"+ str);
 		}
-		
-		empMap = ser.deleteEmployee(empMap, 3);
-		for(int k =1;k<=empMap.size();++k) {
+		System.out.println();
+		empMap = ser.deleteEmployee(empMap, 2);
+		for(int k =1;k<=empMap.size()+1;++k) {
 			if(empMap.containsKey(k)) {
 				str = empMap.get(k).getId()  +" "+empMap.get(k).getName() +" "+empMap.get(k).getDesignation() +" "+empMap.get(k).getSalary() +" "+empMap.get(k).getInsuranceScheme();
 				System.out.println(k  +"\t"+ str);
@@ -44,7 +44,7 @@ public class EmployeeMain {
 				continue;
 			}
 		}
-		
+		System.out.println();
 		empList = ser.employeeDetailsBasedOnScheme(empMap, "Scheme B");
 		for(int k =1;k<=empMap.size();++k) {
 			if(empList.contains(k)) {

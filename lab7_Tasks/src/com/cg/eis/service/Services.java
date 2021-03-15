@@ -17,11 +17,12 @@ public class Services implements EmployeeService {
 		this.emp = emp;
 	}
 
-	Employee emp = new Employee();
+	Employee emp;
 
 	@Override
 	public void addEmployee(int id, String name, double salary, String designation) {
 		// TODO Auto-generated method stub
+		emp = new Employee();
 		emp.setId(id);
 		emp.setDesignation(designation);
 //		emp.setInsuranceScheme(insuranceScheme);
@@ -58,13 +59,7 @@ public class Services implements EmployeeService {
 	@Override
 	public HashMap<Integer, Employee> deleteEmployee(HashMap<Integer, Employee> map, int id) {
 		// TODO Auto-generated method stub
-		for (Map.Entry<Integer, Employee> entry : map.entrySet()) {
-			if (entry.getKey().equals(id)) {
-				map.remove(id);
-			} else {
-				continue;
-			}
-		}
+		map.remove(id);
 		return map;
 	}
 
