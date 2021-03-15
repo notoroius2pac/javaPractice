@@ -1,7 +1,6 @@
 package tasks;
 
 import java.util.Arrays;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class Exercise2 {
@@ -28,7 +27,7 @@ public class Exercise2 {
 		for(int j =0;j< numberOfString;++j) {
 			System.out.println(str[j]);
 		}
-//		sc.close();
+		sc.close();
 	}
 	
 	String[] sortString(String s[]) {
