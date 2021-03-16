@@ -1,17 +1,17 @@
 package tasks;
 
-import java.io.FileInputStream;
+import java.util.Timer;
+import java.util.TimerTask;
 
-public class FileProgram{
+public class FileProgram extends TimerTask{
+
+	CopyDataThread t1 = new CopyDataThread("F:\\Capgemini Workspace\\STS\\Lab9_Tasks\\src\\tasks\\sourceFile.txt","F:\\Capgemini Workspace\\STS\\Lab9_Tasks\\src\\tasks\\destinationFile.txt");
 	
-	CopyDataThread t1 = new CopyDataThread("sourceFile.txt","destinationFile.txt");{
-	try {
-		   FileInputStream fin=new FileInputStream("sourceFile.txt");    
-		   byte[] buffer = new byte[4];
-		   int i=fin.read(buffer, 0, 5);  
-		   System.out.println(buffer.toString());
-		   fin.close();
-	   }catch(Exception e) {
-		   System.out.println("Exception caught :\t" + e);
-	   }
-}}
+	@Override
+	public void run() {
+	      Task t1 = new Task("10 characters are copied");
+	      Timer t = new Timer();
+	      t.schedule(t1,0, 5000);
+
+	}
+	}
