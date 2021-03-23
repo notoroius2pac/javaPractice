@@ -54,5 +54,13 @@
 /Lab10_Tasks/.classpath
 /Lab10_Tasks/.project
 
-/task-1
-/practice
+/task-1/.settings
+/task-1/bin
+/task-1/.classpath
+/task-1/.project
+
+/practice/.settings
+/practice/bin
+/practice/.classpath
+/practice/.project
+

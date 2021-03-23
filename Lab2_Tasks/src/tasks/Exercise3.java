@@ -29,15 +29,11 @@ public class Exercise3 {
 		String str;
 		for(int i = 0;i<n.length;++i) {
 			str = String.valueOf(n[i]);
-			   
-			
 				char ch[]=str.toCharArray(); 
 			    String rev="";  
 			    for(int i1=ch.length-1;i1>=0;i1--){  
 			        rev+=ch[i1];  
 			    }
-			    
-			    
 			    str =rev;
 			    n[i] = Integer.valueOf(str);
 		}
